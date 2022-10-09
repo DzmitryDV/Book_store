@@ -1,6 +1,3 @@
-from operator import mod
-from tabnanny import verbose
-from unittest.util import _MAX_LENGTH
 from django.db import models
 
 # Create your models here.
@@ -8,11 +5,25 @@ from django.db import models
 class BookAuthor(models.Model):
     name = models.CharField(
         max_length=100,
-        verbose_name="Автор",
-        
+        verbose_name="Имя",
+        )
+    surname = models.CharField(
+        max_length=100,
+        verbose_name="Фамилия",
+        )
+    patronymic = models.CharField(
+        max_length=100,
+        verbose_name="Отчество",
+        blank=True,
+        null=True,
         )
     def __str__(self) -> str:
-        return self.name
+        if self.patronymic == None:
+            return f'{self.surname} {self.name}'
+        else:
+             return f'{self.surname} {self.name} {self.patronymic}'  
+    
+    
 
 class BookSerie(models.Model):
     name = models.CharField(
