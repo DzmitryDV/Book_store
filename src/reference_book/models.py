@@ -5,15 +5,15 @@ from django.db import models
 
 class BookAuthor(models.Model):
     name = models.CharField(
-        max_length=100,
+        max_length=40,
         verbose_name="Имя",
         )
     surname = models.CharField(
-        max_length=100,
+        max_length=40,
         verbose_name="Фамилия",
         )
     patronymic = models.CharField(
-        max_length=100,
+        max_length=40,
         verbose_name="Отчество",
         blank=True,
         null=True,
@@ -37,7 +37,7 @@ class BookSerie(models.Model):
 
 class BookGenre(models.Model):
     name = models.CharField(
-        max_length=100,
+        max_length=40,
         verbose_name="Жанр",
         )
     description = models.TextField(
@@ -69,4 +69,4 @@ class Currency(models.Model):
         verbose_name="Наименование валюты"
     )
     def __str__(self) -> str:
-        return f'{self.name} -   "{self.description}"'
+        return f'{self.name} - "{self.description}"'
