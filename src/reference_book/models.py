@@ -41,6 +41,7 @@ class BookGenre(models.Model):
         verbose_name="Жанр",
         )
     description = models.TextField(
+        verbose_name="Описание жанра",
         blank=True,
         null=True,
     )
