@@ -65,7 +65,8 @@ class Currency(models.Model):
     )
     description = models.CharField(
         max_length=40,
-        default="Белорусский рубль"
+        default="Белорусский рубль",
+        verbose_name="Наименование валюты"
     )
     def __str__(self) -> str:
         return f'{self.name} -   "{self.description}"'
