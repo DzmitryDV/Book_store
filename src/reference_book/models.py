@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -56,4 +57,15 @@ class BookPublisher(models.Model):
         return self.name
 
 
-
+class Currency(models.Model):
+    name = models.CharField(
+        default="BYN",
+        max_length=5,
+        verbose_name="Валюта"
+    )
+    description = models.CharField(
+        max_length=40,
+        default="Белорусский рубль"
+    )
+    def __str__(self) -> str:
+        return f'{self.name} -   "{self.description}"'
