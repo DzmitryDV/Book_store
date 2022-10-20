@@ -23,6 +23,10 @@ class BookAuthor(models.Model):
             return f'{self.surname} {self.name}'
         else:
              return f'{self.surname} {self.name} {self.patronymic}'  
+    def get_absolute_url(self):
+        return f'/show_author/{self.pk}/'
+    
+
     
     
 
