@@ -1,4 +1,3 @@
-from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -26,10 +25,6 @@ class BookAuthor(models.Model):
     def get_absolute_url(self):
         return f'/show_author/{self.pk}/'
     
-
-    
-    
-
 class BookSerie(models.Model):
     name = models.CharField(
         max_length=100,
@@ -38,6 +33,8 @@ class BookSerie(models.Model):
         )
     def __str__(self) -> str:
         return self.name
+    def get_absolute_url(self):
+        return f'/show_serie/{self.pk}/'
 
 class BookGenre(models.Model):
     name = models.CharField(
@@ -51,6 +48,8 @@ class BookGenre(models.Model):
     )
     def __str__(self) -> str:
         return self.name
+    def get_absolute_url(self):
+        return f'/show_genre/{self.pk}/'
 
 class BookPublisher(models.Model):
     name = models.CharField(
@@ -60,7 +59,8 @@ class BookPublisher(models.Model):
         )
     def __str__(self) -> str:
         return self.name
-
+    def get_absolute_url(self):
+        return f'/show_publisher/{self.pk}/'
 
 class Currency(models.Model):
     name = models.CharField(
@@ -75,3 +75,5 @@ class Currency(models.Model):
     )
     def __str__(self) -> str:
         return f'{self.name} - "{self.description}"'
+    def get_absolute_url(self):
+        return f'/show_currency/{self.pk}/'
