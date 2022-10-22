@@ -1,5 +1,6 @@
 from . import models, forms
 from django.views import generic
+from django.urls import reverse_lazy
 
 
 class Author():
@@ -25,7 +26,7 @@ class Author():
     class DeleteAuthor(generic.DeleteView):
         model = models.BookAuthor
         template_name='reference_book/delete_author.html'
-        success_url = '/show_authors/'    
+        success_url = reverse_lazy('reference_book:authors-list')                                                     
 
 class BkSerie():
     class ListSerie(generic.ListView):
@@ -49,7 +50,8 @@ class BkSerie():
     class DeleteSerie(generic.DeleteView):
         model = models.BookSerie
         template_name='reference_book/delete_serie.html'
-        success_url = '/show_series/'
+        #success_url = '/show_series/'
+        success_url = reverse_lazy('reference_book:series-list')
 
 class BkGenre():
     class ListGenre(generic.ListView):
@@ -73,7 +75,8 @@ class BkGenre():
     class DeleteGenre(generic.DeleteView):
         model = models.BookGenre
         template_name='reference_book/delete_genre.html'
-        success_url = '/show_genres/'
+        #success_url = '/show_genres/'
+        success_url = reverse_lazy('reference_book:genres-list')
 
 class BkPublisher():
     class ListPublisher(generic.ListView):
@@ -97,7 +100,8 @@ class BkPublisher():
     class DeletePublisher(generic.DeleteView):
         model = models.BookPublisher
         template_name='reference_book/delete_publisher.html'
-        success_url = '/show_publishers/'
+        #success_url = '/show_publishers/'
+        success_url = reverse_lazy('reference_book:publishers-list')
 
 class BkCurrency():
     class ListCurrency(generic.ListView):
@@ -121,7 +125,8 @@ class BkCurrency():
     class DeleteCurrency(generic.DeleteView):
         model = models.Currency
         template_name='reference_book/delete_currency.html'
-        success_url = '/show_currencys/'
+        #success_url = 'refs/show_currencys/'
+        success_url = reverse_lazy('reference_book:currencys-list')
 
 
 

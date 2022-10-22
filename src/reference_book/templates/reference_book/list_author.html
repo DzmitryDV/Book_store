@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Список Авторов</title>
 </head>
 <body>
     <h1>Список Авторов:</h1>
     <table border="1">
         {% for obj in object_list %}
+        {% if obj.patronymic == None %}
         <tr>
-            <td><a href="/show_author/{{ obj.pk }}"> {{ obj.pk }}</a></td>>
-            <td><a href="/update_author/{{ obj.pk }}"> {{ obj.surname }} {{ obj.name }} {{ obj.patronymic }} </a></td>>
-            <td><a href="/delete_author/{{ obj.pk }}">Удалить</a></td>  
+            <td><a href="{% url 'reference_book:author-detail' pk=obj.pk %}"> {{ obj.pk }}</a></td>>
+            <td><a href="{% url 'reference_book:author-update' pk=obj.pk %}"> {{ obj.surname }} {{ obj.name }}</a></td>>
+            <td><a href="{% url 'reference_book:author-delete' pk=obj.pk %}">Удалить</a></td>  
         </tr>
+        {% else %}
+        <tr>
+            <td><a href="{% url 'reference_book:author-detail' pk=obj.pk %}"> {{ obj.pk }}</a></td>>
+            <td><a href="{% url 'reference_book:author-update' pk=obj.pk %}"> {{ obj.surname }} {{ obj.name }} {{ obj.patronymic }} </a></td>>
+            <td><a href="{% url 'reference_book:author-delete' pk=obj.pk %}">Удалить</a></td>  
+        </tr>
+        {% endif %}
         {% endfor %}
     </table><br>
-    <a href="/create_author/"><button>Добавить автора</button></a>
+    <a href="{% url 'reference_book:author-create' %}"><button>Добавить автора</button></a>
 </body>
 </html>

@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Информация о валюте</title>
 </head>
 <body>
     <h1>Информация о Валюте:</h1>
     PK: {{ object.pk}} <br>
     Валюта: {{ object.name }}<br>
     Описание: {{ object.description }}<br>
-    <a href="/show_currencys/"><button>Посмотреть список валют</button></a>
+    <a href="{% url 'reference_book:currencys-list' %}"><button>Посмотреть список валют</button></a>
 </body>
 </html>

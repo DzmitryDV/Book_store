@@ -1,0 +1,30 @@
+from django.urls import path
+from . import views
+app_name = "reference_book"
+urlpatterns = [
+    path('show_author/<int:pk>/', views.Author.ShowAutor.as_view(), name='author-detail'),
+    path('show_authors/', views.Author.ListAuthor.as_view(), name='authors-list'),
+    path('create_author/', views.Author.CreateAuthor.as_view(), name='author-create'),
+    path('update_author/<int:pk>/', views.Author.UpdateAuthor.as_view(), name='author-update'),
+    path('delete_author/<int:pk>/', views.Author.DeleteAuthor.as_view(), name='author-delete'),
+    path('show_serie/<int:pk>/', views.BkSerie.ShowSerie.as_view(), name='serie-detail'),
+    path('show_series/', views.BkSerie.ListSerie.as_view(), name='series-list'),
+    path('create_serie/', views.BkSerie.CreateSerie.as_view(), name='serie-create'),
+    path('update_serie/<int:pk>/', views.BkSerie.UpdateSerie.as_view(), name='serie-update'),
+    path('delete_serie/<int:pk>/', views.BkSerie.DeleteSerie.as_view(), name='serie-delete'),
+    path('show_genre/<int:pk>/', views.BkGenre.ShowGenre.as_view(), name='genre-detail'),
+    path('show_genres/', views.BkGenre.ListGenre.as_view(), name='genres-list'),
+    path('create_genre/', views.BkGenre.CreateGenre.as_view(), name='genre-create'),
+    path('update_genre/<int:pk>/', views.BkGenre.UpdateGenre.as_view(), name='genre-update'),
+    path('delete_genre/<int:pk>/', views.BkGenre.DeleteGenre.as_view(), name='genre-delete'),
+    path('show_publisher/<int:pk>/', views.BkPublisher.ShowPublisher.as_view(), name='publisher-detail'),
+    path('show_publishers/', views.BkPublisher.ListPublisher.as_view(), name='publishers-list'),
+    path('create_publisher/', views.BkPublisher.CreatePublisher.as_view(), name='publisher-create'),
+    path('update_publisher/<int:pk>/', views.BkPublisher.UpdatePublisher.as_view(), name='publisher-update'),
+    path('delete_publisher/<int:pk>/', views.BkPublisher.DeletePublisher.as_view(), name='publisher-delete'),
+    path('show_currency/<int:pk>/', views.BkCurrency.ShowCurrency.as_view(), name='currency-detail'),
+    path('show_currencys/', views.BkCurrency.ListCurrency.as_view(), name='currencys-list'),
+    path('create_currency/', views.BkCurrency.CreateCurrency.as_view(), name='currency-create'),
+    path('update_currency/<int:pk>/', views.BkCurrency.UpdateCurrency.as_view(), name='currency-update'),
+    path('delete_currency/<int:pk>/', views.BkCurrency.DeleteCurrency.as_view(), name='currency-delete'),
+]

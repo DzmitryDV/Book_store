@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Удаление автора</title>
 </head>
 <body>
     <h1>Удаление Автора:</h1>
@@ -14,6 +14,6 @@
         {% csrf_token %}
         <input type="submit" value="Удалить">
     </form> <br>
-    <a href="/show_authors/"><button> Вернуться назад</button></a>
+    <a href="{% url 'reference_book:authors-list' %}"><button> Вернуться назад</button></a>
 </body>
 </html>

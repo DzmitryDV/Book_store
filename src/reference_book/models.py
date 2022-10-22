@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse_lazy
 
 # Create your models here.
 
@@ -23,7 +24,8 @@ class BookAuthor(models.Model):
         else:
              return f'{self.surname} {self.name} {self.patronymic}'  
     def get_absolute_url(self):
-        return f'/show_author/{self.pk}/'
+        #return f'/show_author/{self.pk}/'
+        return reverse_lazy('reference_book:author-detail', kwargs={'pk': self.pk})
     
 class BookSerie(models.Model):
     name = models.CharField(
@@ -34,7 +36,8 @@ class BookSerie(models.Model):
     def __str__(self) -> str:
         return self.name
     def get_absolute_url(self):
-        return f'/show_serie/{self.pk}/'
+        #return f'/show_serie/{self.pk}/'
+        return reverse_lazy('reference_book:serie-detail', kwargs={'pk': self.pk}) 
 
 class BookGenre(models.Model):
     name = models.CharField(
@@ -49,7 +52,8 @@ class BookGenre(models.Model):
     def __str__(self) -> str:
         return self.name
     def get_absolute_url(self):
-        return f'/show_genre/{self.pk}/'
+        #return f'/show_genre/{self.pk}/'
+        return reverse_lazy('reference_book:genre-detail', kwargs={'pk': self.pk})
 
 class BookPublisher(models.Model):
     name = models.CharField(
@@ -60,7 +64,8 @@ class BookPublisher(models.Model):
     def __str__(self) -> str:
         return self.name
     def get_absolute_url(self):
-        return f'/show_publisher/{self.pk}/'
+        #return f'/show_publisher/{self.pk}/'
+        return reverse_lazy('reference_book:publisher-detail', kwargs={'pk': self.pk})
 
 class Currency(models.Model):
     name = models.CharField(
@@ -76,4 +81,5 @@ class Currency(models.Model):
     def __str__(self) -> str:
         return f'{self.name} - "{self.description}"'
     def get_absolute_url(self):
-        return f'/show_currency/{self.pk}/'
+        #return f'/show_currency/{self.pk}/'
+        return reverse_lazy('reference_book:currency-detail', kwargs={'pk': self.pk})

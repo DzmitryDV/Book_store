@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Добавление серии</title>
 </head>
 <body>
     <h1>Введите данные новой серии:</h1>
@@ -13,6 +13,6 @@
         {{ form.as_p }}
         <input type="submit" value="Добавить">
     </form><br>
-    <a href="/show_series/"><button>Вернуться назад</button></a>
+    <a href="{% url 'reference_book:series-list' %}"><button>Вернуться назад</button></a>
 </body>
 </html>
