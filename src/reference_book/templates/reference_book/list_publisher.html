@@ -11,12 +11,12 @@
     <table border="1">
         {% for obj in object_list %}
         <tr>
-            <td><a href="{% url 'reference_book:publishers-detail' pk=obj.pk %}"> {{ obj.pk }}</a></td>>
-            <td><a href="{% url 'reference_book:publishers-update' pk=obj.pk %}"> {{ obj.name }}</a></td>>
-            <td><a href="{% url 'reference_book:publishers-delete' pk=obj.pk %}">Удалить</a></td>  
+            <td><a href="{% url 'reference_book:publisher-detail' pk=obj.pk %}"> {{ obj.pk }}</a></td>
+            <td><a href="{% url 'reference_book:publisher-update' pk=obj.pk %}"> {{ obj.name }}</a></td>
+            <td><a href="{% url 'reference_book:publisher-delete' pk=obj.pk %}">Удалить</a></td>  
         </tr>
         {% endfor %}
     </table><br>
-    <a href="{% url 'reference_book:publishers-create' %}"><button>Добавить Издательство</button></a>
+    <a href="{% url 'reference_book:publisher-create' %}"><button>Добавить Издательство</button></a>
 </body>
 </html>

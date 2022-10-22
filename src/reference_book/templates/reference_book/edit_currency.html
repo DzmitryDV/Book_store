@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Добавление автора</title>
+    <title> {{ operation_name }} валюты</title>
 </head>
 <body>
-    <h1>Введите данные нового автора:</h1>
+    <h1>Введите новую валюту:</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Добавить">
     </form><br>
-    <a href="{% url 'reference_book:authors-list' %}"><button>Вернуться назад</button></a>
+    <a href="{% url 'reference_book:currencys-list' %}"><button>Вернуться назад</button></a>
 </body>
 </html>

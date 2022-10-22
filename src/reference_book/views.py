@@ -16,12 +16,20 @@ class Author():
     class CreateAuthor(generic.CreateView):
         model = models.BookAuthor
         form_class = forms.BookAuthorForm  
-        template_name='reference_book/create_author.html' 
+        template_name='reference_book/edit_author.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Добавление' 
+            return context
 
     class UpdateAuthor(generic.UpdateView):
         model = models.BookAuthor
         form_class = forms.BookAuthorForm  
-        template_name='reference_book/update_author.html'
+        template_name='reference_book/edit_author.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Редактирование' 
+            return context
 
     class DeleteAuthor(generic.DeleteView):
         model = models.BookAuthor
@@ -40,12 +48,20 @@ class BkSerie():
     class CreateSerie(generic.CreateView):
         model = models.BookSerie
         form_class = forms.BookSerieForm  
-        template_name='reference_book/create_serie.html'
+        template_name='reference_book/edit_serie.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Добавление' 
+            return context
 
     class UpdateSerie(generic.UpdateView):
         model = models.BookSerie
         form_class = forms.BookSerieForm  
-        template_name='reference_book/update_serie.html'
+        template_name='reference_book/edit_serie.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Редактирование' 
+            return context
 
     class DeleteSerie(generic.DeleteView):
         model = models.BookSerie
@@ -65,12 +81,20 @@ class BkGenre():
     class CreateGenre(generic.CreateView):
         model = models.BookGenre
         form_class = forms.BookGenreForm
-        template_name='reference_book/create_genre.html'
+        template_name='reference_book/edit_genre.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Добавление' 
+            return context
 
     class UpdateGenre(generic.UpdateView):
         model = models.BookGenre
         form_class = forms.BookGenreForm
-        template_name='reference_book/update_genre.html'
+        template_name='reference_book/edit_genre.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Редактирование' 
+            return context
 
     class DeleteGenre(generic.DeleteView):
         model = models.BookGenre
@@ -90,12 +114,20 @@ class BkPublisher():
     class CreatePublisher(generic.CreateView):
         model = models.BookPublisher
         form_class = forms.BookPublisherForm
-        template_name='reference_book/create_publisher.html'
+        template_name='reference_book/edit_publisher.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Добавление' 
+            return context
 
     class UpdatePublisher(generic.UpdateView):
         model = models.BookPublisher
         form_class = forms.BookPublisherForm
-        template_name='reference_book/update_publisher.html'
+        template_name='reference_book/edit_publisher.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Редактирование' 
+            return context
 
     class DeletePublisher(generic.DeleteView):
         model = models.BookPublisher
@@ -115,12 +147,20 @@ class BkCurrency():
     class CreateCurrency(generic.CreateView):
         model = models.Currency
         form_class = forms.CurrencyForm
-        template_name='reference_book/create_currency.html'
+        template_name='reference_book/edit_currency.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Добавление' 
+            return context
 
     class UpdateCurrency(generic.UpdateView):
         model = models.Currency
         form_class = forms.CurrencyForm
-        template_name='reference_book/update_currency.html'
+        template_name='reference_book/edit_currency.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'Редактирование' 
+            return context
 
     class DeleteCurrency(generic.DeleteView):
         model = models.Currency

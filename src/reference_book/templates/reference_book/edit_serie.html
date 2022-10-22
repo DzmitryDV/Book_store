@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Добавление валюты</title>
+    <title>{{ operation_name }} серии</title>
 </head>
 <body>
-    <h1>Введите новую валюту:</h1>
+    <h1>Введите данные новой серии:</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Добавить">
     </form><br>
-    <a href="{% url 'reference_book:currencys-list' %}"><button>Вернуться назад</button></a>
+    <a href="{% url 'reference_book:series-list' %}"><button>Вернуться назад</button></a>
 </body>
 </html>
