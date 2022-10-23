@@ -1,19 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Удаление издательства</title>
-</head>
-<body>
-    <h1>Удаление издательства:</h1>
-    PK {{ object.pk}} <br>
-    Издательство: {{ object.name }}
-    <form action="" method="post">
-        {% csrf_token %}
-        <input type="submit" value="Удалить">
-    </form> <br>
-    <a href="{% url 'reference_book:publishers-list' %}"><button> Вернуться назад</button></a>
-</body>
+{% include "./index.html" %}
+<div class="container">
+    <div class="col-4">
+    <h2 align="center">Удалеине издательства:</h2>
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark table-primary" align="center">
+                <tr>
+                  <th scope="col">PK</th>
+                  <th scope="col">Название издательства</th>
+                </tr>
+             </thead>
+            <tbody align="center" >
+                <tr>
+                    <td>{{ object.pk }}</td>
+                    <td>{{ object.name }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <form action="" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Удалить" class="btn btn-primary">
+        </form>
+    </div>
+</div>
 </html>

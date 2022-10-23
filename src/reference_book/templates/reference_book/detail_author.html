@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информация об авторе</title>
-</head>
-<body>
-    <h1>Информация об авторе:</h1>
-    PK: {{ object.pk}} <br>
-    Фамилия: {{ object.surname }}<br>
-    Имя: {{ object.name }}<br>
-    Отчество: {{ object.patronymic }}<br>
-    <a href="{% url 'reference_book:authors-list' %}"><button>Посмотреть список авторов</button></a>
+{% include "./index.html" %}
+    <div class="container">
+        <div class="col-8">
+        <h2 align="center">Информация об авторе:</h2>
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark table-primary" align="center">
+                    <tr>
+                      <th scope="col">PK</th>
+                      <th scope="col">Фамилия</th>
+                      <th scope="col">Имя</th>
+                      <th scope="col">Отчество</th>
+                    </tr>
+                 </thead>
+                <tbody align="center" >
+                    <tr>
+                        <td>{{ object.pk }}</td>
+                        <td>{{ object.surname }}</td>
+                        <td>{{ object.name }}</td>
+                        <td>{{ object.patronymic|default_if_none:"" }}</td>
+                    </tr>
+                </tbody>
+            </table><br>
+        </div>
+        <a href="{% url 'reference_book:authors-list' %}" class="btn btn-primary">Посмотреть список авторов</a>
+    </div>
 </body>
 </html>

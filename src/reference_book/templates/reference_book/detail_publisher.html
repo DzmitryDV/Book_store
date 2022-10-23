@@ -1,15 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информация об издательстве</title>
-</head>
-<body>
-    <h1>Информация об издательстве:</h1>
-    PK: {{ object.pk}} <br>
-    Издательство: {{ object.name }}<br>
-    <a href="{% url 'reference_book:publishers-list' %}"><button>Посмотреть список издательств</button></a>
+{% include "./index.html" %}
+<div class="container">
+    <div class="col-5">
+    <h2 align="center">Информация об издательстве:</h2>
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark table-primary" align="center">
+                <tr>
+                    <th scope="col">PK</th>
+                    <th scope="col">Название издательства</th>
+                </tr>
+             </thead>
+            <tbody align="center" >
+                <tr>
+                    <td>{{ object.pk }}</td>
+                    <td>{{ object.name }}</td>
+                </tr>
+            </tbody>
+        </table><br>
+    </div>
+    <a href="{% url 'reference_book:publishers-list' %}" class="btn btn-primary">Посмотреть список издательств</a>
+</div>
 </body>
 </html>

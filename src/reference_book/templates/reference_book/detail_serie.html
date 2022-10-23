@@ -1,15 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информация о серии</title>
-</head>
-<body>
-    <h1>Информация о серии:</h1>
-    PK: {{ object.pk}} <br>
-    Серия: {{ object.name }}<br>
-    <a href="{% url 'reference_book:series-list' %}"><button>Посмотреть список серий</button></a>
+{% include "./index.html" %}
+<div class="container">
+    <div class="col-5">
+    <h2 align="center">Информация о серии:</h2>
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-dark table-primary" align="center">
+                <tr>
+                    <th scope="col">PK</th>
+                    <th scope="col">Название серии</th>
+                </tr>
+             </thead>
+            <tbody align="center" >
+                <tr>
+                    <td>{{ object.pk }}</td>
+                    <td>{{ object.name }}</td>
+                </tr>
+            </tbody>
+        </table><br>
+    </div>
+    <a href="{% url 'reference_book:series-list' %}" class="btn btn-primary">Посмотреть список издательств</a>
+</div>
 </body>
 </html>
