@@ -1,23 +1,24 @@
-{% include "./index.html" %}
+{% extends 'reference_book/layout.html' %}
+{% block title %}Информация об издательстве{% endblock %}
+{% block content %}
 <div class="container">
     <div class="col-5">
-    <h2 align="center">Информация об издательстве:</h2>
-        <table class="table table-striped table-bordered table-hover">
-            <thead class="thead-dark table-primary" align="center">
-                <tr>
-                    <th scope="col">PK</th>
-                    <th scope="col">Название издательства</th>
-                </tr>
-             </thead>
-            <tbody align="center" >
-                <tr>
-                    <td>{{ object.pk }}</td>
-                    <td>{{ object.name }}</td>
-                </tr>
-            </tbody>
-        </table><br>
+        <h2 align="center">Информация об издательстве:</h2>
+            <table class="table table-striped table-bordered table-hover">
+                <thead class="thead-dark table-primary" align="center">
+                    <tr>
+                        <th scope="col">PK</th>
+                        <th scope="col">Название издательства</th>
+                    </tr>
+                </thead>
+                <tbody align="center" >
+                    <tr>
+                        <td>{{ object.pk }}</td>
+                        <td>{{ object.name }}</td>
+                    </tr>
+                </tbody>
+            </table><br>
     </div>
     <a href="{% url 'reference_book:publishers-list' %}" class="btn btn-primary">Посмотреть список издательств</a>
 </div>
-</body>
-</html>
+{% endblock %}

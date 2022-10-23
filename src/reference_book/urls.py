@@ -3,6 +3,7 @@ from . import views
 app_name = "reference_book"
 urlpatterns = [
     path('show_author/<int:pk>/', views.Author.ShowAutor.as_view(), name='author-detail'),
+    path('show_author/<int:pk>/', views.Author.ShowAutor.as_view(), name='author-detail'),
     path('show_authors/', views.Author.ListAuthor.as_view(), name='authors-list'),
     path('create_author/', views.Author.CreateAuthor.as_view(), name='author-create'),
     path('update_author/<int:pk>/', views.Author.UpdateAuthor.as_view(), name='author-update'),

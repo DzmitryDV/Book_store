@@ -1,7 +1,10 @@
 from . import models, forms
+from django.shortcuts import render
 from django.views import generic
 from django.urls import reverse_lazy
 
+def index(request):
+    return render(request, 'reference_book/index.html')
 
 class Author():
 
@@ -19,7 +22,7 @@ class Author():
         template_name='reference_book/edit_author.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Добавление' 
+            context ['operation_name'] = 'Добавить автора' 
             return context
 
     class UpdateAuthor(generic.UpdateView):
@@ -28,7 +31,7 @@ class Author():
         template_name='reference_book/edit_author.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Редактирование' 
+            context ['operation_name'] = 'Редактировать автора' 
             return context
 
     class DeleteAuthor(generic.DeleteView):
@@ -51,7 +54,7 @@ class BkSerie():
         template_name='reference_book/edit_serie.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Добавление' 
+            context ['operation_name'] = 'Добавить серию' 
             return context
 
     class UpdateSerie(generic.UpdateView):
@@ -60,7 +63,7 @@ class BkSerie():
         template_name='reference_book/edit_serie.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Редактирование' 
+            context ['operation_name'] = 'Редактировать серию' 
             return context
 
     class DeleteSerie(generic.DeleteView):
@@ -84,7 +87,7 @@ class BkGenre():
         template_name='reference_book/edit_genre.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Добавление' 
+            context ['operation_name'] = 'Добавить жанр' 
             return context
 
     class UpdateGenre(generic.UpdateView):
@@ -93,7 +96,7 @@ class BkGenre():
         template_name='reference_book/edit_genre.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Редактирование' 
+            context ['operation_name'] = 'Редактировать жанр' 
             return context
 
     class DeleteGenre(generic.DeleteView):
@@ -117,7 +120,7 @@ class BkPublisher():
         template_name='reference_book/edit_publisher.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Добавление' 
+            context ['operation_name'] = 'Добавить издательство' 
             return context
 
     class UpdatePublisher(generic.UpdateView):
@@ -126,7 +129,7 @@ class BkPublisher():
         template_name='reference_book/edit_publisher.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Редактирование' 
+            context ['operation_name'] = 'Редактировать издательство' 
             return context
 
     class DeletePublisher(generic.DeleteView):
@@ -150,7 +153,7 @@ class BkCurrency():
         template_name='reference_book/edit_currency.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Добавление' 
+            context ['operation_name'] = 'Добавить валюту' 
             return context
 
     class UpdateCurrency(generic.UpdateView):
@@ -159,7 +162,7 @@ class BkCurrency():
         template_name='reference_book/edit_currency.html'
         def get_context_data(self, *args, **kwargs):
             context = super().get_context_data(*args, **kwargs)
-            context ['operation_name'] = 'Редактирование' 
+            context ['operation_name'] = 'Редактировать валюту' 
             return context
 
     class DeleteCurrency(generic.DeleteView):

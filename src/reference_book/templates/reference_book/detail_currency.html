@@ -1,6 +1,8 @@
-{% include "./index.html" %}
-    <div class="container">
-        <div class="col-5">
+{% extends 'reference_book/layout.html' %}
+{% block title %}Информация о валюте{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="col-5">
         <h2 align="center">Информация о валюте:</h2>
             <table class="table table-striped table-bordered table-hover">
                 <thead class="thead-dark table-primary" align="center">
@@ -9,7 +11,7 @@
                         <th scope="col">Обозначение</th>
                         <th scope="col">Название валюты</th>
                     </tr>
-                 </thead>
+                </thead>
                 <tbody align="center" >
                     <tr>
                         <td>{{ object.pk }}</td>
@@ -18,8 +20,7 @@
                     </tr>
                 </tbody>
             </table><br>
-        </div>
-        <a href="{% url 'reference_book:currencys-list' %}" class="btn btn-primary">Посмотреть список валют</a>
     </div>
-</body>
-</html>
+    <a href="{% url 'reference_book:currencys-list' %}" class="btn btn-primary">Посмотреть список валют</a>
+</div>
+{% endblock %}
