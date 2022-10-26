@@ -17,7 +17,7 @@
             <tbody align="center" >
             {% for obj in object_list %}
             <tr>
-              <td><a href="{% url 'reference_book:author-detail' pk=obj.pk %}"> {{ obj.surname }} </a></td>
+              <td><a href="{% url operation_name pk=obj.pk %}"> {{ obj.surname }} </a></td>
                 <td>{{ obj.name }}</td>
                 <td>{{ obj.patronymic|default_if_none:"" }}</td>
                 <td width="250px"><a href="{% url 'reference_book:author-update' pk=obj.pk %}" class="btn btn-secondary btn-sm">Изменить</a>

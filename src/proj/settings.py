@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'reference_book',
     'crispy_forms',
+    'main'
 ]
 
 MIDDLEWARE = [
@@ -73,7 +74,7 @@ TEMPLATES = [
         },
     },
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 WSGI_APPLICATION = 'proj.wsgi.application'
 
 
@@ -123,7 +124,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIR = [
+    BASE_DIR / "static"
+]
 STATIC_ROOT = '/home/Metsko/static'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -11,6 +11,10 @@ class Author():
     class ListAuthor(generic.ListView):
         model = models.BookAuthor
         template_name='reference_book/list_author.html'
+        def get_context_data(self, *args, **kwargs):
+            context = super().get_context_data(*args, **kwargs)
+            context ['operation_name'] = 'reference_book:author-detail'
+            return context
     
     class ShowAutor(generic.DetailView):
         model = models.BookAuthor
