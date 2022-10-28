@@ -1,3 +1,6 @@
+nav ul li {
+    padding-left: 40px;
+}
 .nav-link {
     color: #fff;
     transition: all 0.4s ease;
