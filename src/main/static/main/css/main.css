@@ -1,40 +1,10 @@
-body {
-    background: rgb(219, 219, 219);
-}
-nav img {
-    width: 180px;
+.nav-link {
+    color: #fff;
+    transition: all 0.4s ease;
 }
 
-.navbar>.container-fluid {
-   justify-content: start;
-}
-
-nav div a {
-    margin-left: 50px;
-}
-
-nav {
-    min-width: 576px;
-}
-
-nav div p {
-    color: aliceblue;
-}
-
-nav div .row p {
-    margin-bottom: 0px;
-}
-
-.offcanvas {
-    --bs-offcanvas-width: 300px;
-}
-
-div .offcanvas-body ul li {
-    display: block;
-    transition: all .4s ease;
-}
-
-div .offcanvas-body ul li:hover, div .offcanvas-body ul a:hover {
-    color:rgb(252, 14, 14);
+ul li a .nav-link:hover, nav ul li .nav-link:hover {
+    color: #f02727;
     transform: scale(1.05);
+    
 }

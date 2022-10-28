@@ -1,8 +1,8 @@
-{% extends 'reference_book/layout.html' %}
+{% extends 'main/layout.html' %}
 {% block title %}Список авторов{% endblock %}
 {% block content %}
 
-<div class="container">
+<div class="container mx-auto">
     <div class="col-8">
         <h2 align="center">Список Авторов:</h2>
         <table class="table table-striped table-bordered table-hover">
@@ -17,7 +17,7 @@
             <tbody align="center" >
             {% for obj in object_list %}
             <tr>
-              <td><a href="{% url operation_name pk=obj.pk %}"> {{ obj.surname }} </a></td>
+              <td><a style="text-decoration: none;" href="{% url operation_name pk=obj.pk %}"> {{ obj.surname }} </a></td>
                 <td>{{ obj.name }}</td>
                 <td>{{ obj.patronymic|default_if_none:"" }}</td>
                 <td width="250px"><a href="{% url 'reference_book:author-update' pk=obj.pk %}" class="btn btn-secondary btn-sm">Изменить</a>
@@ -28,7 +28,7 @@
             </tbody>
         </table><br>
     </div>
-        <a href="{% url 'reference_book:author-create' %}" class="btn btn-primary">Добавить автора</a>
+        <a href="{% url 'reference_book:author-create' %}" class="btn btn-secondary">Добавить автора</a>
 </div>
 
 {% endblock %}
